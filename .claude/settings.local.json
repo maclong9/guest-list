@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
   "permissions": {
     "allow": [
@@ -18,3 +19,29 @@
     "ask": []
   }
 }
+||||||| (empty tree)
+=======
+{
+  "permissions": {
+    "allow": [
+      "Bash(brew install:*)",
+      "Bash(xcodegen generate:*)",
+      "Bash(ls:*)",
+      "Bash(tree:*)",
+      "Bash(open:*)",
+      "Bash(swift package update:*)",
+      "Bash(swift build:*)",
+      "Bash(swift test:*)",
+      "Bash(test:*)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(curl:*)",
+      "WebFetch(domain:github.com)",
+      "Bash(find:*)",
+      "Bash(cloc:*)",
+      "Bash(wc:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
+>>>>>>> b75037e (Project initialized 🚀)

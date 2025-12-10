@@ -12,9 +12,17 @@ let package = Package(
     products: [
         .library(name: "GuestListShared", targets: ["GuestListShared"]),
     ],
+    dependencies: [
+        .package(path: "../../../Tooling/FluentGen"),
+        .package(url: "https://github.com/vapor/fluent.git", from: "4.9.0"),
+    ],
     targets: [
         .target(
             name: "GuestListShared",
+            dependencies: [
+                .product(name: "FluentGen", package: "FluentGen"),
+                .product(name: "Fluent", package: "fluent"),
+            ],
             path: "Sources/GuestListShared"
         ),
         .testTarget(
