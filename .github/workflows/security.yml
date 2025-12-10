@@ -1,0 +1,66 @@
+name: Security
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  schedule:
+    # Run weekly security scan
+    - cron: '0 0 * * 0'
+
+jobs:
+  secrets-scan:
+    name: Scan for Secrets
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: TruffleHog OSS
+        uses: trufflesecurity/trufflehog@main
+        with:
+          path: ./
+          base: ${{ github.event.repository.default_branch }}
+          head: HEAD
+          extra_args: --debug --only-verified
+
+  dependency-check:
+    name: Dependency Vulnerability Scan
+    runs-on: macos-14
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check Swift Package Vulnerabilities
+        run: |
+          cd Web && swift package show-dependencies
+          cd ../Shared && swift package show-dependencies
+
+      - name: Audit for known vulnerabilities
+        run: |
+          echo "Manual review of dependencies required"
+          echo "TODO: Integrate with OWASP dependency-check or similar"
+
+  env-check:
+    name: Environment File Check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Ensure .env is not committed
+        run: |
+          if [ -f "Web/.env" ]; then
+            echo "ERROR: .env file found in repository!"
+            echo "This file should contain secrets and must not be committed."
+            exit 1
+          fi
+          echo "✅ No .env file found in repository"
+
+      - name: Verify .env.example exists
+        run: |
+          if [ ! -f "Web/.env.example" ]; then
+            echo "ERROR: .env.example not found!"
+            exit 1
+          fi
+          echo "✅ .env.example exists"

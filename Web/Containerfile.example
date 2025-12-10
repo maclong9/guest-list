@@ -1,0 +1,43 @@
+# Example Containerfile for building GuestList Web server
+# This will be used with apple/container to build a Swift-based image
+#
+# Currently a placeholder - will be implemented once apple/container
+# has stable tooling for Swift server applications.
+#
+# References:
+# - https://github.com/apple/container
+# - https://github.com/apple/container/blob/main/Documentation/Containerfile.md
+#
+# Usage (future):
+#   container build -t guestlist-web -f Containerfile .
+#   container run -p 8080:8080 guestlist-web
+
+# Base Swift image
+FROM swift:6.0-jammy
+
+# Set working directory
+WORKDIR /app
+
+# Copy package manifests
+COPY Package.swift .
+COPY Package.resolved .
+
+# Resolve dependencies
+RUN swift package resolve
+
+# Copy source code
+COPY Sources ./Sources
+COPY Tests ./Tests
+
+# Build in release mode
+RUN swift build -c release
+
+# Expose port
+EXPOSE 8080
+
+# Set environment
+ENV PORT=8080
+ENV HOST=0.0.0.0
+
+# Run the server
+CMD [".build/release/Web"]

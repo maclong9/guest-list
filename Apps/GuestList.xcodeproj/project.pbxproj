@@ -1,0 +1,1205 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0E1F91F47CC6D56322693776 /* GuestListVisionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED49D3DE83CA670EA7E3B3D /* GuestListVisionApp.swift */; };
+		2C61AEB3888EB89E2928BC50 /* GuestList-Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 52069273DD35D51C77C165D3 /* GuestList-Watch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		3CA054AFC813A53476B82A0C /* GuestListMacApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE600549331169F243AB39 /* GuestListMacApp.swift */; };
+		58DCFF92C5AF42D6B38E619F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9458C8E6E992BFAF2D1B0674 /* ContentView.swift */; };
+		6CE11B3A059AF37CD91564D5 /* GuestListShared in Frameworks */ = {isa = PBXBuildFile; productRef = A322C80F9421F2B1ABFAE05A /* GuestListShared */; };
+		765CDCA231E91FDD591E4901 /* GuestListShared in Frameworks */ = {isa = PBXBuildFile; productRef = B5D39682E931678CAD48D88A /* GuestListShared */; };
+		81DE365A74A75D992BCC4ACB /* GuestList-Vision.app in Resources */ = {isa = PBXBuildFile; fileRef = 84750FBB0F4F7C5AB5891328 /* GuestList-Vision.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		ADC614D9B1941120978769E2 /* GuestListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E982DAC8A5D9CD3203E3984 /* GuestListApp.swift */; };
+		B010B5D682DFC7D3669A377F /* GuestListWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9498CB8612C7FE0FA8A47DF /* GuestListWatchApp.swift */; };
+		B64F4FE5BBF9D45E04A014AF /* GuestListShared in Frameworks */ = {isa = PBXBuildFile; productRef = 196C7195400544A09EF838FF /* GuestListShared */; };
+		B758F87EEA6E978B35618946 /* GuestListShared in Frameworks */ = {isa = PBXBuildFile; productRef = 3057A46AA852D774377D7A9D /* GuestListShared */; };
+		C91145D02022324F5A86A73E /* GuestListShared in Frameworks */ = {isa = PBXBuildFile; productRef = 90E84C0F4272A73C32747165 /* GuestListShared */; };
+		F8551FFC4356F77A7256C35E /* GuestListShared in Frameworks */ = {isa = PBXBuildFile; productRef = 862DD1E59296C868A6656A0B /* GuestListShared */; };
+		F9452E288E9EC82A4747A4EE /* GuestListShared in Frameworks */ = {isa = PBXBuildFile; productRef = 1CAADBD3E8408EE1D4F390FE /* GuestListShared */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0D63D25703F5A767C7826090 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0693935B19FF68508D297524 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 610B0BD3C90745D60FA8E3E1;
+			remoteInfo = "GuestList-Watch";
+		};
+		6BCE0C352BF0A948510FAA9B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0693935B19FF68508D297524 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E3E4071F09FAF54F5888C147;
+			remoteInfo = "GuestList-Vision";
+		};
+		6E5039F37579A6B207FD8DC5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0693935B19FF68508D297524 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BE8D8B3303863496DCBF68ED;
+			remoteInfo = "GuestList-Mac";
+		};
+		7854A6AC26C554AEF51566C7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0693935B19FF68508D297524 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D0919A66E753320DA007E613;
+			remoteInfo = "GuestList-iOS";
+		};
+		CDCB9684210098D1F4633AA0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0693935B19FF68508D297524 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 610B0BD3C90745D60FA8E3E1;
+			remoteInfo = "GuestList-Watch";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4B001EF7C73CDD6638DD3238 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				2C61AEB3888EB89E2928BC50 /* GuestList-Watch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		065A2012E5C41A9CC4F5177B /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
+		0C51DD4C94A25E7762FFF879 /* GuestList-Watch-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "GuestList-Watch-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		136C0B96D6DFC567C82319ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		143240632FF440CB6DE6ACF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		15E0C62F017E4EE565D3360F /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
+		1954822A9FADAD3C97B6544D /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
+		1DC0D3A9C408ACC5F7462A37 /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
+		241B8FDD0191789E16EABE24 /* Shared */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Shared; path = ../Shared; sourceTree = SOURCE_ROOT; };
+		2918942CA275727F0CC883BE /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
+		4F227425D6CECEC67372AF50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		52069273DD35D51C77C165D3 /* GuestList-Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GuestList-Watch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E982DAC8A5D9CD3203E3984 /* GuestListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestListApp.swift; sourceTree = "<group>"; };
+		81C92064EB4BDE5AC5D33579 /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
+		82BCF2A0F3916A4BEC08CC8B /* GuestList-Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GuestList-Mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		84750FBB0F4F7C5AB5891328 /* GuestList-Vision.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "GuestList-Vision.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9458C8E6E992BFAF2D1B0674 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		9ED49D3DE83CA670EA7E3B3D /* GuestListVisionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestListVisionApp.swift; sourceTree = "<group>"; };
+		A380695B3171EE815BE61B76 /* GuestList-Mac-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "GuestList-Mac-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A65092401239273AF3751CEA /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
+		A9498CB8612C7FE0FA8A47DF /* GuestListWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestListWatchApp.swift; sourceTree = "<group>"; };
+		B0FE600549331169F243AB39 /* GuestListMacApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestListMacApp.swift; sourceTree = "<group>"; };
+		B68943F881414C54FC042F8D /* GuestList-iOS.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "GuestList-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9B2FEA5C6D4CD5CA5014EF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		C6E8751F950F2D925FB169F2 /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
+		DC41A17BDEE1AA13B533EB2E /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
+		E83C3E15141D286ACAE2342C /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
+		EE8003C88AC9A213C50244FE /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
+		FEB96B971378BB1E0E889083 /* GuestList-iOS-Tests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = "GuestList-iOS-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2F6AC4421F42B02AB7CD0EFC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B64F4FE5BBF9D45E04A014AF /* GuestListShared in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		503CA271A797F9F3A8DA2D2C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F9452E288E9EC82A4747A4EE /* GuestListShared in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6B8B1392401B5AF6B03F9044 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B758F87EEA6E978B35618946 /* GuestListShared in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C5064CA583E301ACD794C4C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C91145D02022324F5A86A73E /* GuestListShared in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7993E99E7F18AF441D28C382 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				765CDCA231E91FDD591E4901 /* GuestListShared in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C243BC312304AC84784C665B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8551FFC4356F77A7256C35E /* GuestListShared in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC85F721D7887CF40977D17D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6CE11B3A059AF37CD91564D5 /* GuestListShared in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0F4FC9BBCBCD3FE91CDBC30E /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				2918942CA275727F0CC883BE /* .gitkeep */,
+			);
+			name = Components;
+			path = Components;
+			sourceTree = "<group>";
+		};
+		32E1BC8B8A543688AF2DB32E /* App */ = {
+			isa = PBXGroup;
+			children = (
+				9ED49D3DE83CA670EA7E3B3D /* GuestListVisionApp.swift */,
+			);
+			name = App;
+			path = App;
+			sourceTree = "<group>";
+		};
+		33DA761873CD6E00FC83DB89 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				B0FE600549331169F243AB39 /* GuestListMacApp.swift */,
+			);
+			name = App;
+			path = App;
+			sourceTree = "<group>";
+		};
+		365618C0F0B5FCE712F410EA /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				DC41A17BDEE1AA13B533EB2E /* .gitkeep */,
+			);
+			name = Components;
+			path = Components;
+			sourceTree = "<group>";
+		};
+		39E45696DF604A0F3306F8A5 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				241B8FDD0191789E16EABE24 /* Shared */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		4FB700F146A2C93A0603B683 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				5E982DAC8A5D9CD3203E3984 /* GuestListApp.swift */,
+			);
+			name = App;
+			path = App;
+			sourceTree = "<group>";
+		};
+		5587CB50694E3D223CAB7E2C /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				E83C3E15141D286ACAE2342C /* .gitkeep */,
+			);
+			name = Components;
+			path = Components;
+			sourceTree = "<group>";
+		};
+		5AB979BDEA32F95E471E928C /* macOS */ = {
+			isa = PBXGroup;
+			children = (
+				33DA761873CD6E00FC83DB89 /* App */,
+				0F4FC9BBCBCD3FE91CDBC30E /* Components */,
+				F21BFFD1DC78AAB56787631F /* Resources */,
+				B9BD818E9046EE6F3AE4D7F9 /* Screens */,
+				756A9A9C5E03921972900555 /* Tests */,
+			);
+			path = macOS;
+			sourceTree = "<group>";
+		};
+		609A8BE847591630F8AB6AD3 /* Complications */ = {
+			isa = PBXGroup;
+			children = (
+				A65092401239273AF3751CEA /* .gitkeep */,
+			);
+			name = Complications;
+			path = Complications;
+			sourceTree = "<group>";
+		};
+		62A670ACAAB299841ADE7719 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FEB96B971378BB1E0E889083 /* GuestList-iOS-Tests.xctest */,
+				B68943F881414C54FC042F8D /* GuestList-iOS.app */,
+				A380695B3171EE815BE61B76 /* GuestList-Mac-Tests.xctest */,
+				82BCF2A0F3916A4BEC08CC8B /* GuestList-Mac.app */,
+				84750FBB0F4F7C5AB5891328 /* GuestList-Vision.app */,
+				0C51DD4C94A25E7762FFF879 /* GuestList-Watch-Tests.xctest */,
+				52069273DD35D51C77C165D3 /* GuestList-Watch.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		756A9A9C5E03921972900555 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				065A2012E5C41A9CC4F5177B /* .gitkeep */,
+			);
+			name = Tests;
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		79ECB2C32954E47ADC23CD17 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				1954822A9FADAD3C97B6544D /* .gitkeep */,
+			);
+			name = Screens;
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		7E83969236345437B7F1330F /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				C6E8751F950F2D925FB169F2 /* .gitkeep */,
+			);
+			name = Tests;
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		912FDC10D8D3BF36E233796A /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				81C92064EB4BDE5AC5D33579 /* .gitkeep */,
+			);
+			name = Screens;
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		92D7422C5F4A3D70760F88A6 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				A9498CB8612C7FE0FA8A47DF /* GuestListWatchApp.swift */,
+			);
+			name = App;
+			path = App;
+			sourceTree = "<group>";
+		};
+		97F4EF43E439362A8B88BF52 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				15E0C62F017E4EE565D3360F /* .gitkeep */,
+			);
+			name = Components;
+			path = Components;
+			sourceTree = "<group>";
+		};
+		9AA96E7EBA001AF6215FA2A1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				143240632FF440CB6DE6ACF4 /* Info.plist */,
+			);
+			name = Resources;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		AC2C13A74A841512EA3E76CC /* Vision */ = {
+			isa = PBXGroup;
+			children = (
+				32E1BC8B8A543688AF2DB32E /* App */,
+				365618C0F0B5FCE712F410EA /* Components */,
+				FBFC77C7050D1CA360D2C7AD /* Resources */,
+				79ECB2C32954E47ADC23CD17 /* Screens */,
+			);
+			path = Vision;
+			sourceTree = "<group>";
+		};
+		B9BD818E9046EE6F3AE4D7F9 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				1DC0D3A9C408ACC5F7462A37 /* .gitkeep */,
+			);
+			name = Screens;
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		BF5242C318AC83378D11D456 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				9458C8E6E992BFAF2D1B0674 /* ContentView.swift */,
+			);
+			name = Screens;
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		C8A53ED8EF59219AEEA7CB3F = {
+			isa = PBXGroup;
+			children = (
+				E732D775F1895D0A170A82E2 /* iOS */,
+				5AB979BDEA32F95E471E928C /* macOS */,
+				39E45696DF604A0F3306F8A5 /* Packages */,
+				AC2C13A74A841512EA3E76CC /* Vision */,
+				E1DB22D8B637CDE651655B65 /* Watch */,
+				62A670ACAAB299841ADE7719 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CC0EA607629B0075E4A2E875 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4F227425D6CECEC67372AF50 /* Info.plist */,
+			);
+			name = Resources;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		CCA87929D5C2948A4AC4DA52 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				EE8003C88AC9A213C50244FE /* .gitkeep */,
+			);
+			name = Tests;
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		E1DB22D8B637CDE651655B65 /* Watch */ = {
+			isa = PBXGroup;
+			children = (
+				92D7422C5F4A3D70760F88A6 /* App */,
+				609A8BE847591630F8AB6AD3 /* Complications */,
+				5587CB50694E3D223CAB7E2C /* Components */,
+				CC0EA607629B0075E4A2E875 /* Resources */,
+				BF5242C318AC83378D11D456 /* Screens */,
+				CCA87929D5C2948A4AC4DA52 /* Tests */,
+			);
+			path = Watch;
+			sourceTree = "<group>";
+		};
+		E732D775F1895D0A170A82E2 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				4FB700F146A2C93A0603B683 /* App */,
+				97F4EF43E439362A8B88BF52 /* Components */,
+				9AA96E7EBA001AF6215FA2A1 /* Resources */,
+				912FDC10D8D3BF36E233796A /* Screens */,
+				7E83969236345437B7F1330F /* Tests */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		F21BFFD1DC78AAB56787631F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				136C0B96D6DFC567C82319ED /* Info.plist */,
+			);
+			name = Resources;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		FBFC77C7050D1CA360D2C7AD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B9B2FEA5C6D4CD5CA5014EF9 /* Info.plist */,
+			);
+			name = Resources;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		080767FEA167F9A9DE779E53 /* GuestList-iOS-Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C1699E98CF6BC5F54AEB113 /* Build configuration list for PBXNativeTarget "GuestList-iOS-Tests" */;
+			buildPhases = (
+				EF00967137D79C99C412D5B7 /* Sources */,
+				DC85F721D7887CF40977D17D /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9275A55925B83B13BFF187CF /* PBXTargetDependency */,
+			);
+			name = "GuestList-iOS-Tests";
+			packageProductDependencies = (
+				A322C80F9421F2B1ABFAE05A /* GuestListShared */,
+			);
+			productName = "GuestList-iOS-Tests";
+			productReference = FEB96B971378BB1E0E889083 /* GuestList-iOS-Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		39822327AB1D08CD5F2750EF /* GuestList-Mac-Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0722ED56A510C1DA57B9A156 /* Build configuration list for PBXNativeTarget "GuestList-Mac-Tests" */;
+			buildPhases = (
+				F25BCE34D8E177EB1E697FB2 /* Sources */,
+				6B8B1392401B5AF6B03F9044 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				97EF717F57F07E2EB4619DBB /* PBXTargetDependency */,
+			);
+			name = "GuestList-Mac-Tests";
+			packageProductDependencies = (
+				3057A46AA852D774377D7A9D /* GuestListShared */,
+			);
+			productName = "GuestList-Mac-Tests";
+			productReference = A380695B3171EE815BE61B76 /* GuestList-Mac-Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3BC461E8F89FE2D5B340002A /* GuestList-Watch-Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A115B0CFB101A0FA86385222 /* Build configuration list for PBXNativeTarget "GuestList-Watch-Tests" */;
+			buildPhases = (
+				37379F4F8E63F737783A1ED8 /* Sources */,
+				7993E99E7F18AF441D28C382 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BB6C41A80B156CC759305124 /* PBXTargetDependency */,
+			);
+			name = "GuestList-Watch-Tests";
+			packageProductDependencies = (
+				B5D39682E931678CAD48D88A /* GuestListShared */,
+			);
+			productName = "GuestList-Watch-Tests";
+			productReference = 0C51DD4C94A25E7762FFF879 /* GuestList-Watch-Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		610B0BD3C90745D60FA8E3E1 /* GuestList-Watch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8C8E4643B566C514ED8C3986 /* Build configuration list for PBXNativeTarget "GuestList-Watch" */;
+			buildPhases = (
+				47C7B81C299F46587211A1A7 /* Sources */,
+				C243BC312304AC84784C665B /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "GuestList-Watch";
+			packageProductDependencies = (
+				862DD1E59296C868A6656A0B /* GuestListShared */,
+			);
+			productName = "GuestList-Watch";
+			productReference = 52069273DD35D51C77C165D3 /* GuestList-Watch.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BE8D8B3303863496DCBF68ED /* GuestList-Mac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 356787BAAB34FE53336F7A56 /* Build configuration list for PBXNativeTarget "GuestList-Mac" */;
+			buildPhases = (
+				02D67CC5534D40918072DB05 /* Sources */,
+				503CA271A797F9F3A8DA2D2C /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "GuestList-Mac";
+			packageProductDependencies = (
+				1CAADBD3E8408EE1D4F390FE /* GuestListShared */,
+			);
+			productName = "GuestList-Mac";
+			productReference = 82BCF2A0F3916A4BEC08CC8B /* GuestList-Mac.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D0919A66E753320DA007E613 /* GuestList-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7EACB0DBF099FAA6022847DC /* Build configuration list for PBXNativeTarget "GuestList-iOS" */;
+			buildPhases = (
+				BD03BC8AE4FEAB199F0750BC /* Sources */,
+				7F0536CB1FB051784DC2DA27 /* Resources */,
+				6C5064CA583E301ACD794C4C /* Frameworks */,
+				4B001EF7C73CDD6638DD3238 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AA02E5B3A72B3EC09D2F4887 /* PBXTargetDependency */,
+				755C3FCCC2203C8BDF8A9783 /* PBXTargetDependency */,
+			);
+			name = "GuestList-iOS";
+			packageProductDependencies = (
+				90E84C0F4272A73C32747165 /* GuestListShared */,
+			);
+			productName = "GuestList-iOS";
+			productReference = B68943F881414C54FC042F8D /* GuestList-iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E3E4071F09FAF54F5888C147 /* GuestList-Vision */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 268B2131F4AE29D618A0F820 /* Build configuration list for PBXNativeTarget "GuestList-Vision" */;
+			buildPhases = (
+				822BBE118BA2598A8BB38AC1 /* Sources */,
+				2F6AC4421F42B02AB7CD0EFC /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "GuestList-Vision";
+			packageProductDependencies = (
+				196C7195400544A09EF838FF /* GuestListShared */,
+			);
+			productName = "GuestList-Vision";
+			productReference = 84750FBB0F4F7C5AB5891328 /* GuestList-Vision.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0693935B19FF68508D297524 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+			};
+			buildConfigurationList = B2F773C5C1BB7425CEE17F93 /* Build configuration list for PBXProject "GuestList" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = C8A53ED8EF59219AEEA7CB3F;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				5CE7F7C7146B25A737C068F5 /* XCLocalSwiftPackageReference "../Shared" */,
+			);
+			preferredProjectObjectVersion = 77;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BE8D8B3303863496DCBF68ED /* GuestList-Mac */,
+				39822327AB1D08CD5F2750EF /* GuestList-Mac-Tests */,
+				E3E4071F09FAF54F5888C147 /* GuestList-Vision */,
+				610B0BD3C90745D60FA8E3E1 /* GuestList-Watch */,
+				3BC461E8F89FE2D5B340002A /* GuestList-Watch-Tests */,
+				D0919A66E753320DA007E613 /* GuestList-iOS */,
+				080767FEA167F9A9DE779E53 /* GuestList-iOS-Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7F0536CB1FB051784DC2DA27 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				81DE365A74A75D992BCC4ACB /* GuestList-Vision.app in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		02D67CC5534D40918072DB05 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3CA054AFC813A53476B82A0C /* GuestListMacApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		37379F4F8E63F737783A1ED8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		47C7B81C299F46587211A1A7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58DCFF92C5AF42D6B38E619F /* ContentView.swift in Sources */,
+				B010B5D682DFC7D3669A377F /* GuestListWatchApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		822BBE118BA2598A8BB38AC1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E1F91F47CC6D56322693776 /* GuestListVisionApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BD03BC8AE4FEAB199F0750BC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ADC614D9B1941120978769E2 /* GuestListApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF00967137D79C99C412D5B7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F25BCE34D8E177EB1E697FB2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		755C3FCCC2203C8BDF8A9783 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E3E4071F09FAF54F5888C147 /* GuestList-Vision */;
+			targetProxy = 6BCE0C352BF0A948510FAA9B /* PBXContainerItemProxy */;
+		};
+		9275A55925B83B13BFF187CF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D0919A66E753320DA007E613 /* GuestList-iOS */;
+			targetProxy = 7854A6AC26C554AEF51566C7 /* PBXContainerItemProxy */;
+		};
+		97EF717F57F07E2EB4619DBB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BE8D8B3303863496DCBF68ED /* GuestList-Mac */;
+			targetProxy = 6E5039F37579A6B207FD8DC5 /* PBXContainerItemProxy */;
+		};
+		AA02E5B3A72B3EC09D2F4887 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 610B0BD3C90745D60FA8E3E1 /* GuestList-Watch */;
+			targetProxy = CDCB9684210098D1F4633AA0 /* PBXContainerItemProxy */;
+		};
+		BB6C41A80B156CC759305124 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 610B0BD3C90745D60FA8E3E1 /* GuestList-Watch */;
+			targetProxy = 0D63D25703F5A767C7826090 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		07E8165ECD020FE4D0C280F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.guestlist.ios.tests;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 6.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GuestList-iOS.app/GuestList-iOS";
+			};
+			name = Debug;
+		};
+		0E397E4BD661A8CFD3D94CDF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.guestlist.ios.watchkitapp.tests;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 6.2;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GuestList-Watch.app/GuestList-Watch";
+			};
+			name = Debug;
+		};
+		2763DD75687C3F8DD5666535 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CURRENT_PROJECT_VERSION = 1;
+				INFOPLIST_FILE = Watch/Resources/Info.plist;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.guestlist.ios.watchkitapp;
+				SDKROOT = watchos;
+				SKIP_INSTALL = NO;
+				SWIFT_VERSION = 6.2;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Release;
+		};
+		2D13091A05332A54FAC9DCC0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				INFOPLIST_FILE = macOS/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.guestlist.mac;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 6.2;
+			};
+			name = Release;
+		};
+		3DC6A981BFD560EC818596B6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				INFOPLIST_FILE = iOS/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.guestlist.ios;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 6.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		3F3E963696DAF0D75BD27965 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.guestlist.ios.watchkitapp.tests;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 6.2;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GuestList-Watch.app/GuestList-Watch";
+			};
+			name = Release;
+		};
+		4B2791A939469415A51365FD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CURRENT_PROJECT_VERSION = 1;
+				INFOPLIST_FILE = Watch/Resources/Info.plist;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.guestlist.ios.watchkitapp;
+				SDKROOT = watchos;
+				SKIP_INSTALL = NO;
+				SWIFT_VERSION = 6.2;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Debug;
+		};
+		514592C09CF085A2D3AC5ABF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				INFOPLIST_FILE = iOS/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.guestlist.ios;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 6.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6051B69C483046ACB943CE8A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+				XROS_DEPLOYMENT_TARGET = 1.0;
+			};
+			name = Debug;
+		};
+		63AA77EE393B6CDD6DA9DCC8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.guestlist.ios.tests;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 6.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GuestList-iOS.app/GuestList-iOS";
+			};
+			name = Release;
+		};
+		805DD7665CAA2E154DB6B977 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.guestlist.mac.tests;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 6.2;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GuestList-Mac.app/Contents/MacOS/GuestList-Mac";
+			};
+			name = Debug;
+		};
+		95930448B615E1A515418DFA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				INFOPLIST_FILE = macOS/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.guestlist.mac;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 6.2;
+			};
+			name = Debug;
+		};
+		AB924F6C5E4BB502CB40C098 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.guestlist.mac.tests;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 6.2;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GuestList-Mac.app/Contents/MacOS/GuestList-Mac";
+			};
+			name = Release;
+		};
+		CFFC35BD4B81EAE7B68E4A5C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CURRENT_PROJECT_VERSION = 1;
+				INFOPLIST_FILE = Vision/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.guestlist.ios.visionos;
+				SDKROOT = xros;
+				SKIP_INSTALL = NO;
+				SWIFT_VERSION = 6.2;
+				TARGETED_DEVICE_FAMILY = 7;
+				VISIONOS_DEPLOYMENT_TARGET = 1.0;
+			};
+			name = Debug;
+		};
+		E0CAF0FFA3D0F161D4C3CD10 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CURRENT_PROJECT_VERSION = 1;
+				INFOPLIST_FILE = Vision/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.guestlist.ios.visionos;
+				SDKROOT = xros;
+				SKIP_INSTALL = NO;
+				SWIFT_VERSION = 6.2;
+				TARGETED_DEVICE_FAMILY = 7;
+				VISIONOS_DEPLOYMENT_TARGET = 1.0;
+			};
+			name = Release;
+		};
+		EE49822F99C5125C5A8D9832 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+				XROS_DEPLOYMENT_TARGET = 1.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0722ED56A510C1DA57B9A156 /* Build configuration list for PBXNativeTarget "GuestList-Mac-Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				805DD7665CAA2E154DB6B977 /* Debug */,
+				AB924F6C5E4BB502CB40C098 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		268B2131F4AE29D618A0F820 /* Build configuration list for PBXNativeTarget "GuestList-Vision" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CFFC35BD4B81EAE7B68E4A5C /* Debug */,
+				E0CAF0FFA3D0F161D4C3CD10 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		2C1699E98CF6BC5F54AEB113 /* Build configuration list for PBXNativeTarget "GuestList-iOS-Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				07E8165ECD020FE4D0C280F7 /* Debug */,
+				63AA77EE393B6CDD6DA9DCC8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		356787BAAB34FE53336F7A56 /* Build configuration list for PBXNativeTarget "GuestList-Mac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				95930448B615E1A515418DFA /* Debug */,
+				2D13091A05332A54FAC9DCC0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		7EACB0DBF099FAA6022847DC /* Build configuration list for PBXNativeTarget "GuestList-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				514592C09CF085A2D3AC5ABF /* Debug */,
+				3DC6A981BFD560EC818596B6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		8C8E4643B566C514ED8C3986 /* Build configuration list for PBXNativeTarget "GuestList-Watch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4B2791A939469415A51365FD /* Debug */,
+				2763DD75687C3F8DD5666535 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		A115B0CFB101A0FA86385222 /* Build configuration list for PBXNativeTarget "GuestList-Watch-Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0E397E4BD661A8CFD3D94CDF /* Debug */,
+				3F3E963696DAF0D75BD27965 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		B2F773C5C1BB7425CEE17F93 /* Build configuration list for PBXProject "GuestList" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6051B69C483046ACB943CE8A /* Debug */,
+				EE49822F99C5125C5A8D9832 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		5CE7F7C7146B25A737C068F5 /* XCLocalSwiftPackageReference "../Shared" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../Shared;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		196C7195400544A09EF838FF /* GuestListShared */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = GuestListShared;
+		};
+		1CAADBD3E8408EE1D4F390FE /* GuestListShared */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = GuestListShared;
+		};
+		3057A46AA852D774377D7A9D /* GuestListShared */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = GuestListShared;
+		};
+		862DD1E59296C868A6656A0B /* GuestListShared */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = GuestListShared;
+		};
+		90E84C0F4272A73C32747165 /* GuestListShared */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = GuestListShared;
+		};
+		A322C80F9421F2B1ABFAE05A /* GuestListShared */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = GuestListShared;
+		};
+		B5D39682E931678CAD48D88A /* GuestListShared */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = GuestListShared;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 0693935B19FF68508D297524 /* Project object */;
+}

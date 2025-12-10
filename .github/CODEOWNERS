@@ -1,0 +1,29 @@
+# Code Owners
+# These users will be automatically requested for review when someone opens a pull request
+# that modifies code in the specified paths.
+
+# Global owners (fallback)
+* @your-github-username
+
+# Security-sensitive files
+/SECURITY.md @your-github-username
+/.github/workflows/security.yml @your-github-username
+/Web/.env.example @your-github-username
+/Web/compose.yml @your-github-username
+
+# Core infrastructure
+/Makefile @your-github-username
+/.swift-format @your-github-username
+/.github/ @your-github-username
+
+# Shared package
+/Shared/ @your-github-username
+
+# Web server
+/Web/ @your-github-username
+
+# Platform apps
+/iOS/ @your-github-username
+/macOS/ @your-github-username
+/visionOS/ @your-github-username
+/watchOS/ @your-github-username

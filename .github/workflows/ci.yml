@@ -1,0 +1,105 @@
+name: CI
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+
+env:
+  DEVELOPER_DIR: /Applications/Xcode_16.2.app/Contents/Developer
+
+jobs:
+  format:
+    name: Code Formatting
+    runs-on: macos-14
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install swift-format
+        run: brew install swift-format
+
+      - name: Check formatting
+        run: make lint
+
+  shared:
+    name: Shared Package
+    runs-on: macos-14
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build Shared
+        run: cd Shared && swift build
+
+      - name: Test Shared
+        run: cd Shared && swift test
+
+  web:
+    name: Web Server
+    runs-on: macos-14
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build Web
+        run: cd Web && swift build
+
+      - name: Test Web
+        run: cd Web && swift test
+
+  ios:
+    name: iOS Build & Test
+    runs-on: macos-14
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build iOS
+        run: |
+          xcodebuild build \
+            -workspace GuestList.xcworkspace \
+            -scheme GuestList-iOS \
+            -destination 'platform=iOS Simulator,name=iPhone 15,OS=17.2' \
+            -quiet
+
+      - name: Test iOS
+        run: |
+          xcodebuild test \
+            -workspace GuestList.xcworkspace \
+            -scheme GuestList-iOS \
+            -destination 'platform=iOS Simulator,name=iPhone 15,OS=17.2' \
+            -quiet
+
+  macos:
+    name: macOS Build & Test
+    runs-on: macos-14
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build macOS
+        run: |
+          xcodebuild build \
+            -workspace GuestList.xcworkspace \
+            -scheme GuestList-Mac \
+            -destination 'platform=macOS' \
+            -quiet
+
+      - name: Test macOS
+        run: |
+          xcodebuild test \
+            -workspace GuestList.xcworkspace \
+            -scheme GuestList-Mac \
+            -destination 'platform=macOS' \
+            -quiet
+
+  visionos:
+    name: visionOS Build
+    runs-on: macos-14
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build visionOS
+        run: |
+          xcodebuild build \
+            -workspace GuestList.xcworkspace \
+            -scheme GuestList-Vision \
+            -destination 'platform=visionOS Simulator,name=Apple Vision Pro,OS=1.0' \
+            -quiet

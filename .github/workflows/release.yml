@@ -1,0 +1,79 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+
+jobs:
+  create-release:
+    name: Create GitHub Release
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Create Release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          draft: false
+          prerelease: false
+
+  build-web-container:
+    name: Build Web Server Container
+    runs-on: ubuntu-latest
+    needs: create-release
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build container image
+        run: |
+          echo "TODO: Build Swift container using apple/container"
+          echo "This requires a Containerfile in Web/"
+
+      # - name: Push to registry
+      #   run: |
+      #     echo "Push to Docker Hub, GHCR, or private registry"
+
+  build-ios:
+    name: Build iOS for App Store
+    runs-on: macos-14
+    needs: create-release
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build and Archive iOS
+        run: |
+          xcodebuild archive \
+            -workspace GuestList.xcworkspace \
+            -scheme GuestList-iOS \
+            -configuration Release \
+            -archivePath ios.xcarchive \
+            -destination 'generic/platform=iOS'
+
+      # TODO: Export IPA and upload to App Store Connect
+      # Requires fastlane or similar tool + App Store Connect API key
+
+  build-macos:
+    name: Build macOS for App Store
+    runs-on: macos-14
+    needs: create-release
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build and Archive macOS
+        run: |
+          xcodebuild archive \
+            -workspace GuestList.xcworkspace \
+            -scheme GuestList-Mac \
+            -configuration Release \
+            -archivePath macos.xcarchive \
+            -destination 'generic/platform=macOS'
+
+      # TODO: Notarize and create DMG for direct distribution

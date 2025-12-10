@@ -1,0 +1,102 @@
+# Xcode
+#
+# gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
+
+## User settings
+xcuserdata/
+
+## Xcode 8 and earlier
+*.xcscmblueprint
+*.xccheckout
+
+## Xcode Patch
+*.xcodeproj/xcuserdata/
+*.xcodeproj/project.xcworkspace/xcuserdata/
+
+## Workspace settings
+*.xcworkspace/*
+!*.xcworkspace/contents.xcworkspacedata
+
+## Playgrounds
+timeline.xctimeline
+playground.xcworkspace
+
+# Swift Package Manager
+.build/
+.swiftpm/
+
+## Build generated
+DerivedData/
+.derivedData/
+
+## Various settings
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+
+## Obj-C/Swift specific
+*.hmap
+
+## App packaging
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+## macOS
+.DS_Store
+
+# Swift Package Manager
+Packages/
+Package.pins
+Package.resolved
+
+# Web (Backend + Frontend)
+Web/.build/
+Web/.swiftpm/
+Web/.output/
+
+# Shared
+Shared/.build/
+Shared/.swiftpm/
+
+# Dependencies
+.dependencies/
+
+# IDEs
+.vscode/
+.idea/
+
+# Environment - SECURITY: Never commit secrets
+.env
+.env.local
+.env.*.local
+.env.production
+.env.staging
+.env.development
+*.pem
+*.key
+*.crt
+*.p12
+*.mobileprovision
+credentials.json
+secrets.yml
+
+# Logs
+*.log
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Redis
+dump.rdb
+
+# Security
+*.keychain
+*.provisionprofile
