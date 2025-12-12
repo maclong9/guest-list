@@ -5,29 +5,17 @@ import FluentGen
 @FluentModel
 public struct Venue: Codable, Identifiable, Sendable, Hashable {
     public let id: UUID
-
     public var name: String
-
     public var email: String
-
     public var phoneNumber: String?
-
     public var address: String?
-
     public var city: String?
-
     public var state: String?
-
     public var zipCode: String?
-
     public var country: String
-
     public var tier: VenueTier
-
     public var isActive: Bool
-
     public var createdAt: Date
-
     public var updatedAt: Date
 
     public init(

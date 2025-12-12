@@ -1,0 +1,57 @@
+# ──────────────────────────────────────────────────────────
+# GuestList Web - Development Dockerfile
+# Includes watchexec for hot reload
+# ──────────────────────────────────────────────────────────
+
+FROM swift:latest
+
+RUN export DEBIAN_FRONTEND=noninteractive DEBCONF_NONINTERACTIVE_SEEN=true \
+    && apt-get -q update \
+    && apt-get -q dist-upgrade -y \
+    && apt-get install -y \
+    libjemalloc-dev \
+    curl \
+    wget \
+    xz-utils \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install watchexec for hot reload (detect architecture)
+RUN ARCH=$(dpkg --print-architecture) && \
+    if [ "$ARCH" = "amd64" ]; then \
+        WATCHEXEC_ARCH="x86_64-unknown-linux-musl"; \
+    elif [ "$ARCH" = "arm64" ]; then \
+        WATCHEXEC_ARCH="aarch64-unknown-linux-musl"; \
+    else \
+        echo "Unsupported architecture: $ARCH" && exit 1; \
+    fi && \
+    wget -q https://github.com/watchexec/watchexec/releases/download/v1.25.1/watchexec-1.25.1-${WATCHEXEC_ARCH}.tar.xz && \
+    tar -xf watchexec-1.25.1-${WATCHEXEC_ARCH}.tar.xz && \
+    mv watchexec-1.25.1-${WATCHEXEC_ARCH}/watchexec /usr/local/bin/ && \
+    rm -rf watchexec-1.25.1-${WATCHEXEC_ARCH}*
+
+WORKDIR /app
+
+# Copy FluentGen first (local dependency at ../../../Tooling/FluentGen from Shared)
+COPY Tooling/FluentGen /Tooling/FluentGen
+
+# Copy Shared package (local dependency at ../Shared from Web)
+COPY Apps/GuestList/Shared /Shared
+
+# Copy Web package manifests and resolve dependencies
+COPY Apps/GuestList/Web/Package.* ./
+RUN swift package resolve
+
+# Copy Web source code
+COPY Apps/GuestList/Web/Sources ./Sources
+COPY Apps/GuestList/Web/Tests ./Tests
+
+# Expose HTTP port
+EXPOSE 8080
+
+# Use watchexec to rebuild and restart on file changes
+CMD ["watchexec", \
+     "--restart", \
+     "--watch", "Sources", \
+     "--exts", "swift", \
+     "--", \
+     "swift", "run", "Web"]

@@ -5,25 +5,15 @@ import FluentGen
 @FluentModel
 public struct Event: Codable, Identifiable, Sendable, Hashable {
     public let id: UUID
-
     public var venueID: UUID
-
     public var name: String
-
     public var description: String?
-
     public var startTime: Date
-
     public var endTime: Date
-
     public var location: String?
-
     public var capacity: Int?
-
     public var status: EventStatus
-
     public var createdAt: Date
-
     public var updatedAt: Date
 
     public init(

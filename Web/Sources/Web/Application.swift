@@ -211,11 +211,10 @@ struct GuestListApp {
         // Initialize services
         let authService = AuthService(jwtSecret: jwtSecret, jwtExpirationHours: jwtExpirationHours, refreshTokenExpirationDays: refreshTokenExpirationDays)
         let redisService = RedisService(redis: redis, logger: logger)
+        let validationService = ValidationService()
+        let ticketService = TicketService(hmacSecret: jwtSecret)
 
-        // Initialize controllers
-        let authController = AuthController(authService: authService, redisService: redisService, fluent: fluent, logger: logger)
-
-        let router = Router()
+        let router = Router(context: AppRequestContext.self)
 
         // Health check
         router.get("health") { _, _ in
@@ -236,27 +235,37 @@ struct GuestListApp {
             )
         }
 
-        // Auth routes
+        // Initialize controllers
+        let authController = AuthController(authService: authService, redisService: redisService, fluent: fluent, logger: logger)
+        let venueController = VenueController(fluent: fluent, logger: logger)
+        let eventController = EventController(fluent: fluent, validationService: validationService, logger: logger)
+        let guestController = GuestController(fluent: fluent, validationService: validationService, logger: logger)
+        let ticketController = TicketController(fluent: fluent, ticketService: ticketService, logger: logger)
+
+        // Auth routes (public - no JWT required)
         let authGroup = router.group("api/v1/auth")
         authController.addRoutes(to: authGroup)
 
-        // TODO: Add more API endpoints
-        // EventController
-        // GET    /api/v1/events
-        // POST   /api/v1/events
-        // GET    /api/v1/events/:id
-        // PUT    /api/v1/events/:id
-        // DELETE /api/v1/events/:id
-        // GET    /api/v1/events/:id/guests
-        //
-        // GuestController
-        // POST   /api/v1/guests
-        // PUT    /api/v1/guests/:id/check-in
-        //
-        // TicketController
-        // GET    /api/v1/tickets/:id
-        // POST   /api/v1/tickets/validate
-        // POST   /api/v1/tickets/generate
+        // Protected API routes (JWT required)
+        let jwtMiddleware = JWTAuthMiddleware(authService: authService, redisService: redisService, logger: logger)
+        let protectedGroup = router.group("api/v1")
+            .add(middleware: jwtMiddleware)
+
+        // Venue routes
+        let venuesGroup = protectedGroup.group("venues")
+        venueController.addRoutes(to: venuesGroup)
+
+        // Event routes
+        let eventsGroup = protectedGroup.group("events")
+        eventController.addRoutes(to: eventsGroup)
+
+        // Guest routes
+        let guestsGroup = protectedGroup.group("guests")
+        guestController.addRoutes(to: guestsGroup)
+
+        // Ticket routes
+        let ticketsGroup = protectedGroup.group("tickets")
+        ticketController.addRoutes(to: ticketsGroup)
 
         // Frontend routes (WebUI-generated HTML)
         // Catch-all for frontend routes - should be last

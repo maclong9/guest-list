@@ -5,27 +5,16 @@ import FluentGen
 @FluentModel
 public struct Guest: Codable, Identifiable, Sendable, Hashable {
     public let id: UUID
-
     public var eventID: UUID
-
     public var firstName: String
-
     public var lastName: String
-
     public var email: String?
-
     public var phoneNumber: String?
-
     public var ticketType: TicketType
-
     public var isCheckedIn: Bool
-
     public var checkedInAt: Date?
-
     public var notes: String?
-
     public var createdAt: Date
-
     public var updatedAt: Date
 
     public init(

@@ -52,29 +52,29 @@
    - [✅] Password strength validation improvements
    - [✅] Add bcrypt for password hashing (replace SHA-256)
 
-2. **[ ] Implement Core API Controllers**
-   - [ ] **EventController** (CRUD operations)
-     - [ ] POST /api/v1/events - Create event
-     - [ ] GET /api/v1/events - List events
-     - [ ] GET /api/v1/events/:id - Get event details
-     - [ ] PUT /api/v1/events/:id - Update event
-     - [ ] DELETE /api/v1/events/:id - Delete event
-     - [ ] GET /api/v1/events/:id/guests - Get guest list
+2. **[✅] Implement Core API Controllers**
+   - [✅] **EventController** (CRUD operations)
+     - [✅] POST /api/v1/events - Create event
+     - [✅] GET /api/v1/events - List events (with pagination, status filter)
+     - [✅] GET /api/v1/events/:id - Get event details
+     - [✅] PUT /api/v1/events/:id - Update event
+     - [✅] DELETE /api/v1/events/:id - Delete event
+     - [✅] GET /api/v1/events/:id/guests - Get guest list
 
-   - [ ] **VenueController** (CRUD operations)
-     - [ ] GET /api/v1/venues/:id - Get venue details
-     - [ ] PUT /api/v1/venues/:id - Update venue
-     - [ ] GET /api/v1/venues/:id/events - Get venue events
+   - [✅] **VenueController** (CRUD operations)
+     - [✅] GET /api/v1/venues/:id - Get venue details
+     - [✅] PUT /api/v1/venues/:id - Update venue
+     - [✅] GET /api/v1/venues/:id/events - Get venue events
 
-   - [ ] **GuestController** (guest management)
-     - [ ] POST /api/v1/guests - Add guest to event
-     - [ ] PUT /api/v1/guests/:id/check-in - Check in guest
-     - [ ] GET /api/v1/guests/:id - Get guest details
+   - [✅] **GuestController** (guest management)
+     - [✅] POST /api/v1/guests - Add guest to event
+     - [✅] PUT /api/v1/guests/:id/check-in - Check in guest (idempotent)
+     - [✅] GET /api/v1/guests/:id - Get guest details
 
-   - [ ] **TicketController** (ticket operations)
-     - [ ] GET /api/v1/tickets/:id - Get ticket
-     - [ ] POST /api/v1/tickets/validate - Validate ticket QR code
-     - [ ] POST /api/v1/tickets/generate - Generate ticket with QR
+   - [✅] **TicketController** (ticket operations)
+     - [✅] GET /api/v1/tickets/:id - Get ticket with guest/event details
+     - [✅] POST /api/v1/tickets/validate - Validate ticket QR code with HMAC
+     - [✅] POST /api/v1/tickets/generate - Generate ticket with QR + HMAC signature
 
 3. **[ ] Add WebSocket Chat Functionality**
    - [ ] WS /chat/:eventID - Real-time event chat
@@ -90,6 +90,8 @@
    - [ ] Event management interface
    - [ ] Guest list view
    - [ ] Ticket scanner interface
+   - [ ] Error Page with parameters and messages for various common error codes
+   - [ ] Handled via [``WebController``](https://github.com/hummingbird-project/hummingbird-examples/blob/main/html-form/Sources/App/Controllers/WebController.swift) using a [``RequestDecoder``](https://github.com/hummingbird-project/hummingbird-examples/blob/main/html-form/Sources/App/Extensions/RequestDecoder.swift)
 
 5. **[ ] Create Apple Platform Apps**
    - [ ] Add APIClient in Shared package

@@ -243,16 +243,17 @@ help:
 	@echo "  clean              - Clean build artifacts"
 	@echo ""
 	@echo "Services (Docker Compose):"
-	@echo "  services-up        - Start PostgreSQL + Redis"
-	@echo "  services-up-full   - Start PostgreSQL + Redis + Web (production test)"
+	@echo "  services-up        - Start PostgreSQL + Redis only"
+	@echo "  services-up-dev    - Start all + Web container with hot reload (recommended)"
+	@echo "  services-up-full   - Start all + Web container (production test)"
 	@echo "  services-down      - Stop services"
 	@echo "  services-logs      - View service logs"
 	@echo "  services-restart   - Restart services"
 	@echo "  services-clean     - Remove services and volumes"
 	@echo ""
-	@echo "Development:"
-	@echo "  dev                - Start with hot reload (recommended)"
-	@echo "  run-web            - Start web server (no hot reload)"
+	@echo "Development (native Swift, faster iteration):"
+	@echo "  dev                - Hot reload with native Swift binary"
+	@echo "  run-web            - Start web server natively (no hot reload)"
 
 # ──────────────────────────
 # Development commands
@@ -326,6 +327,21 @@ services-up:
 	@echo "✅ Services started"
 	@echo "   PostgreSQL: localhost:5432"
 	@echo "   Redis: localhost:6379"
+
+services-up-dev:
+	@echo "Starting PostgreSQL + Redis + Web (development mode with hot reload)..."
+	@if [ ! -f $(COMPOSE_ENV) ]; then \
+		echo "❌ Error: $(COMPOSE_ENV) not found. Copy from Web/.env.example"; \
+		exit 1; \
+	fi
+	@docker compose --env-file $(COMPOSE_ENV) --profile dev up -d --build
+	@echo "✅ Development stack started"
+	@echo "   PostgreSQL: localhost:5432"
+	@echo "   Redis: localhost:6379"
+	@echo "   Web (containerized): http://localhost:8080"
+	@echo "   📝 Hot reload enabled - edit files in Web/Sources to trigger rebuild"
+	@echo ""
+	@echo "View logs: docker compose logs -f web-dev"
 
 services-down:
 	@echo "Stopping services..."

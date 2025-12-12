@@ -5,13 +5,9 @@ import FluentGen
 @FluentModel
 public struct Message: Codable, Identifiable, Sendable, Hashable {
     public let id: UUID
-
     public var eventID: UUID
-
     public var userID: UUID
-
     public var content: String
-
     public var createdAt: Date
 
     public init(

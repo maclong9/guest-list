@@ -5,23 +5,14 @@ import FluentGen
 @FluentModel
 public struct User: Codable, Identifiable, Sendable, Hashable {
     public let id: UUID
-
     public var venueID: UUID
-
     public var email: String
-
     public var passwordHash: String
-
     public var firstName: String
-
     public var lastName: String
-
     public var role: UserRole
-
     public var isActive: Bool
-
     public var createdAt: Date
-
     public var updatedAt: Date
 
     public init(

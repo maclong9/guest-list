@@ -3,13 +3,13 @@ import GuestListShared
 import Hummingbird
 import Logging
 
-/// Middleware to validate JWT authentication on protected routes
-struct JWTAuthMiddleware<Context: RequestContext>: RouterMiddleware {
+/// Middleware to validate JWT authentication and attach payload to request context
+struct JWTAuthMiddleware: RouterMiddleware {
     let authService: AuthService
     let redisService: RedisService
     let logger: Logger
 
-    func handle(_ request: Request, context: Context, next: (Request, Context) async throws -> Response) async throws -> Response {
+    func handle(_ request: Request, context: AppRequestContext, next: (Request, AppRequestContext) async throws -> Response) async throws -> Response {
         // Extract JWT from Authorization header
         guard let authHeader = request.headers[.authorization],
               authHeader.hasPrefix("Bearer ")
@@ -37,17 +37,18 @@ struct JWTAuthMiddleware<Context: RequestContext>: RouterMiddleware {
                 throw HTTPError(.unauthorized, message: "Token has been revoked")
             }
 
-            // Token is valid - attach user info to context for use in route handlers
-            // Note: Hummingbird context is immutable, so we can't attach user info directly
-            // Route handlers should re-verify if they need user info, or we could use a custom context
             logger.debug("JWT validated successfully", metadata: [
                 "user_id": "\(payload.sub)",
                 "role": "\(payload.role)",
                 "path": "\(request.uri.path)"
             ])
 
-            // Call next middleware/handler
-            return try await next(request, context)
+            // Create new context with payload attached
+            var authenticatedContext = context
+            authenticatedContext.payload = payload
+
+            // Call next middleware/handler with authenticated context
+            return try await next(request, authenticatedContext)
         } catch let error as AuthError {
             logger.warning("JWT validation failed", metadata: [
                 "error": "\(error)",

@@ -1,4 +1,6 @@
+#if canImport(SwiftUI)
 import SwiftUI
+#endif
 
 /// Unified design system for GuestList
 /// Works seamlessly with both SwiftUI and WebUI
@@ -52,6 +54,7 @@ public enum DesignSystem {
 
         // MARK: - SwiftUI Color
 
+        #if canImport(SwiftUI)
         /// Get SwiftUI Color for use in SwiftUI apps
         public var swiftUIColor: Color {
             switch self {
@@ -91,6 +94,7 @@ public enum DesignSystem {
             case .textInverse: return Color.white
             }
         }
+        #endif
 
         // MARK: - WebUI Color String
 
@@ -185,6 +189,7 @@ public enum DesignSystem {
         case xl8  // 6rem (96px)
         case xl9  // 8rem (128px)
 
+        #if canImport(SwiftUI)
         /// SwiftUI font size in points
         public var size: CGFloat {
             switch self {
@@ -203,6 +208,7 @@ public enum DesignSystem {
             case .xl9: return 128
             }
         }
+        #endif
 
         /// WebUI TextSize identifier
         public var webUISize: String {
@@ -236,6 +242,7 @@ public enum DesignSystem {
         case extrabold  // 800
         case black  // 900
 
+        #if canImport(SwiftUI)
         /// SwiftUI Font.Weight
         public var swiftUIWeight: Font.Weight {
             switch self {
@@ -250,6 +257,7 @@ public enum DesignSystem {
             case .black: return .black
             }
         }
+        #endif
 
         /// WebUI Weight identifier
         public var webUIWeight: String {
@@ -296,6 +304,7 @@ public enum DesignSystem {
         case _28  // 112px (7rem)
         case _32  // 128px (8rem)
 
+        #if canImport(SwiftUI)
         /// SwiftUI spacing in points
         public var value: CGFloat {
             switch self {
@@ -325,10 +334,41 @@ public enum DesignSystem {
             case ._32: return 128
             }
         }
+        #endif
 
         /// WebUI spacing identifier (for use with padding/margin operations)
         public var webUIValue: Int {
-            Int(value)
+            #if canImport(SwiftUI)
+            return Int(value)
+            #else
+            // For Linux, calculate directly
+            switch self {
+            case .px: return 1
+            case ._0: return 0
+            case ._0_5: return 2
+            case ._1: return 4
+            case ._1_5: return 6
+            case ._2: return 8
+            case ._2_5: return 10
+            case ._3: return 12
+            case ._3_5: return 14
+            case ._4: return 16
+            case ._5: return 20
+            case ._6: return 24
+            case ._7: return 28
+            case ._8: return 32
+            case ._9: return 36
+            case ._10: return 40
+            case ._11: return 44
+            case ._12: return 48
+            case ._14: return 56
+            case ._16: return 64
+            case ._20: return 80
+            case ._24: return 96
+            case ._28: return 112
+            case ._32: return 128
+            }
+            #endif
         }
     }
 
@@ -346,6 +386,7 @@ public enum DesignSystem {
         case xl3  // 24px (1.5rem)
         case full  // 9999px
 
+        #if canImport(SwiftUI)
         /// SwiftUI corner radius in points
         public var value: CGFloat {
             switch self {
@@ -360,6 +401,7 @@ public enum DesignSystem {
             case .full: return 9999
             }
         }
+        #endif
 
         /// WebUI radius identifier
         public var webUIValue: String {
@@ -390,6 +432,7 @@ public enum DesignSystem {
         case inner
         case none
 
+        #if canImport(SwiftUI)
         /// SwiftUI shadow configuration (radius, x, y)
         public var swiftUI: (radius: CGFloat, x: CGFloat, y: CGFloat) {
             switch self {
@@ -403,6 +446,7 @@ public enum DesignSystem {
             case .none: return (0, 0, 0)
             }
         }
+        #endif
 
         /// WebUI shadow identifier
         public var webUIValue: String {
@@ -430,6 +474,7 @@ public enum DesignSystem {
         case xl  // 1280px
         case xl2  // 1536px
 
+        #if canImport(SwiftUI)
         /// Breakpoint value in points
         public var value: CGFloat {
             switch self {
@@ -441,9 +486,11 @@ public enum DesignSystem {
             case .xl2: return 1536
             }
         }
+        #endif
     }
 }
 
+#if canImport(SwiftUI)
 // MARK: - SwiftUI Extensions
 
 extension View {
@@ -488,3 +535,4 @@ extension View {
             .foregroundColor(color.swiftUIColor)
     }
 }
+#endif

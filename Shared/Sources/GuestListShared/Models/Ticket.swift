@@ -5,21 +5,13 @@ import FluentGen
 @FluentModel
 public struct Ticket: Codable, Identifiable, Sendable, Hashable {
     public let id: UUID
-
     public var eventID: UUID
-
     public var guestID: UUID
-
     public var qrCode: String
-
     public var hmacSignature: String
-
     public var isValid: Bool
-
     public var validatedAt: Date?
-
     public var createdAt: Date
-
     public var updatedAt: Date
 
     public init(

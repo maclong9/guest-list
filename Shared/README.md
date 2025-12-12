@@ -90,19 +90,6 @@ func parseWebUIColor(_ colorString: String) -> WebUI.Color {
 }
 ```
 
-### Alternative: Use Design System as Documentation
-
-Since WebUI uses type-safe enums, you can also use `DesignSystem` as a reference guide:
-
-```swift
-// Check design system for the semantic color
-// DesignSystem.Colors.primary.webUIColor → "blue._500"
-
-// Then use WebUI's native API
-Heading(.one) { "Welcome" }
-    .font(size: .xl5, weight: .bold, color: .blue(._500))
-```
-
 ## Design System Reference
 
 ### Colors (`DesignSystem.Colors`)

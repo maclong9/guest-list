@@ -1,10 +1,14 @@
 # GuestList - Docker Compose Configuration
 #
 # Usage:
-#   make services-up        - Start databases only (for local development)
+#   make services-up        - Start databases only (for native Swift development)
+#   make services-up-dev    - Start databases + web container with hot reload (recommended for development)
 #   make services-up-full   - Start databases + web server (for production testing)
 #
-# Note: Web service is optional and disabled by default for faster local development
+# Development workflow:
+#   - `make services-up-dev` runs the web app in a container with watchexec hot reload
+#   - Code changes in Web/Sources trigger automatic rebuild and restart
+#   - Matches production container environment while maintaining fast iteration
 
 services:
   postgres:
@@ -40,6 +44,36 @@ services:
       timeout: 5s
       retries: 5
 
+  web-dev:
+    build:
+      context: ../../  # /Users/mac/Developer (includes Apps/GuestList and Tooling/FluentGen)
+      dockerfile: Apps/GuestList/Web/Dockerfile.dev
+    container_name: guestlist-web-dev
+    ports:
+      - "${PORT:-8080}:8080"
+    environment:
+      DATABASE_URL: postgres://${POSTGRES_USER:-guestlist}:${POSTGRES_PASSWORD:-dev_password_change_in_prod}@postgres:5432/${POSTGRES_DB:-guestlist}
+      REDIS_URL: redis://:${REDIS_PASSWORD:-dev_redis_password}@redis:6379
+      PORT: 8080
+      HOST: 0.0.0.0
+      LOG_LEVEL: ${LOG_LEVEL:-debug}
+      JWT_SECRET: ${JWT_SECRET:-dev_jwt_secret_replace_in_production_min_32_characters}
+      JWT_EXPIRATION_HOURS: ${JWT_EXPIRATION_HOURS:-24}
+      REFRESH_TOKEN_EXPIRATION_DAYS: ${REFRESH_TOKEN_EXPIRATION_DAYS:-30}
+    volumes:
+      # Mount source code for hot reload
+      - ./Web/Sources:/app/Sources:ro
+      - ./Web/Tests:/app/Tests:ro
+      # Mount Shared package (read-only)
+      - ./Shared:/Shared:ro
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    profiles:
+      - dev # Start with --profile dev
+
   web:
     build:
       context: ./Web
@@ -55,6 +89,8 @@ services:
       HOST: 0.0.0.0
       LOG_LEVEL: ${LOG_LEVEL:-info}
       JWT_SECRET: ${JWT_SECRET:-dev_jwt_secret_replace_in_production_min_32_characters}
+      JWT_EXPIRATION_HOURS: ${JWT_EXPIRATION_HOURS:-24}
+      REFRESH_TOKEN_EXPIRATION_DAYS: ${REFRESH_TOKEN_EXPIRATION_DAYS:-30}
     depends_on:
       postgres:
         condition: service_healthy

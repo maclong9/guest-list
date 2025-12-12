@@ -384,76 +384,6 @@ make run-web                    # Start web server at localhost:8080
 open GuestList.xcworkspace      # iOS, macOS, watchOS, visionOS in Xcode
 ```
 
-### Using the Design System
-
-The project includes a unified design system that works with both SwiftUI and WebUI:
-
-**SwiftUI Example:**
-```swift
-import SwiftUI
-import GuestListShared
-
-struct EventCard: View {
-    var body: some View {
-        VStack(alignment: .leading, spacing: DesignSystem.Spacing._4.value) {
-            Text("Summer Concert Series")
-                .typography(size: .xl2, weight: .bold, color: .textPrimary)
-            
-            Text("July 15, 2025 • 8:00 PM")
-                .typography(size: .sm, weight: .medium, color: .textSecondary)
-            
-            Button("Get Tickets") {
-                // Action
-            }
-            .foregroundColor(.textInverse)
-            .padding(._4)
-            .backgroundColor(.primary)
-            .cornerRadius(.md)
-            .shadow(.md)
-        }
-        .padding(._6)
-        .backgroundColor(.backgroundSecondary)
-        .cornerRadius(.lg)
-    }
-}
-```
-
-**WebUI Example:**
-```swift
-import WebUI
-import GuestListShared
-
-func eventCard() -> some HTML {
-    Division {
-        Heading(.two) { "Summer Concert Series" }
-            .font(
-                size: DesignSystem.Typography.xl2.webUISize,
-                weight: DesignSystem.Weight.bold.webUIWeight,
-                color: .custom(DesignSystem.Colors.textPrimary.hex)
-            )
-        
-        Paragraph { "July 15, 2025 • 8:00 PM" }
-            .font(
-                size: DesignSystem.Typography.sm.webUISize,
-                weight: DesignSystem.Weight.medium.webUIWeight,
-                color: .custom(DesignSystem.Colors.textSecondary.hex)
-            )
-        
-        Button { "Get Tickets" }
-            .font(color: .custom(DesignSystem.Colors.textInverse.hex))
-            .padding(of: DesignSystem.Spacing._4.webUIValue, at: .all)
-            .background(color: .custom(DesignSystem.Colors.primary.hex))
-            .rounded(DesignSystem.Radius.md.webUIValue)
-            .shadow(DesignSystem.Shadow.md.webUIValue)
-    }
-    .padding(of: DesignSystem.Spacing._6.webUIValue, at: .all)
-    .background(color: .custom(DesignSystem.Colors.backgroundSecondary.hex))
-    .rounded(DesignSystem.Radius.lg.webUIValue)
-}
-```
-
-Both examples produce visually identical results using the same design tokens!
-
 ## What It Does
 
 **GuestList** helps venues manage events with:
@@ -679,28 +609,75 @@ This would transform GuestList from a guest management tool into a complete tick
 2. **Add API endpoint** in `Web/Sources/Web/Controllers/`
 3. **Update APIClient** in `Shared/Sources/GuestListShared/Services/`
 4. **Build UI** in platform apps or WebUI pages
+### Using the Design System
 
-## Implementation Status
+The project includes a unified design system that works with both SwiftUI and WebUI:
 
-**✅ Complete:**
-- Monorepo structure with shared code
-- Multi-platform Xcode project (iOS, macOS, watchOS, visionOS)
-- Docker Compose setup (PostgreSQL, Redis)
-- CI/CD pipelines
-- Code formatting and linting
+**SwiftUI Example:**
+```swift
+import SwiftUI
+import GuestListShared
 
-**🚧 In Progress:**
-- Database integration (PostgresNIO)
-- Redis caching (HummingbirdRedis)
-- JWT authentication
-- API endpoints
-- WebSocket chat
-- WebUI frontend pages
-- Platform app features
-- Customer event schedule views (upcoming events)
-- Venue dashboard for event management and editing
+struct EventCard: View {
+    var body: some View {
+        VStack(alignment: .leading, spacing: DesignSystem.Spacing._4.value) {
+            Text("Summer Concert Series")
+                .typography(size: .xl2, weight: .bold, color: .textPrimary)
+            
+            Text("July 15, 2025 • 8:00 PM")
+                .typography(size: .sm, weight: .medium, color: .textSecondary)
+            
+            Button("Get Tickets") {
+                // Action
+            }
+            .foregroundColor(.textInverse)
+            .padding(._4)
+            .backgroundColor(.primary)
+            .cornerRadius(.md)
+            .shadow(.md)
+        }
+        .padding(._6)
+        .backgroundColor(.backgroundSecondary)
+        .cornerRadius(.lg)
+    }
+}
+```
 
-See full status in implementation checklist above.
+**WebUI Example:**
+```swift
+import WebUI
+import GuestListShared
+
+func eventCard() -> some HTML {
+    Division {
+        Heading(.two) { "Summer Concert Series" }
+            .font(
+                size: DesignSystem.Typography.xl2.webUISize,
+                weight: DesignSystem.Weight.bold.webUIWeight,
+                color: .custom(DesignSystem.Colors.textPrimary.hex)
+            )
+        
+        Paragraph { "July 15, 2025 • 8:00 PM" }
+            .font(
+                size: DesignSystem.Typography.sm.webUISize,
+                weight: DesignSystem.Weight.medium.webUIWeight,
+                color: .custom(DesignSystem.Colors.textSecondary.hex)
+            )
+        
+        Button { "Get Tickets" }
+            .font(color: .custom(DesignSystem.Colors.textInverse.hex))
+            .padding(of: DesignSystem.Spacing._4.webUIValue, at: .all)
+            .background(color: .custom(DesignSystem.Colors.primary.hex))
+            .rounded(DesignSystem.Radius.md.webUIValue)
+            .shadow(DesignSystem.Shadow.md.webUIValue)
+    }
+    .padding(of: DesignSystem.Spacing._6.webUIValue, at: .all)
+    .background(color: .custom(DesignSystem.Colors.backgroundSecondary.hex))
+    .rounded(DesignSystem.Radius.lg.webUIValue)
+}
+```
+
+Both examples produce visually identical results using the same design tokens!
 
 ## Security
 
