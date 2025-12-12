@@ -29,6 +29,7 @@ let package = Package(
                 .product(name: "HummingbirdRedis", package: "hummingbird-redis"),
                 .product(name: "HummingbirdWebSocket", package: "hummingbird-websocket"),
                 .product(name: "HummingbirdAuth", package: "hummingbird-auth"),
+                .product(name: "HummingbirdBcrypt", package: "hummingbird-auth"),
                 .product(name: "Logging", package: "swift-log"),
                 .product(name: "Metrics", package: "swift-metrics"),
                 .product(name: "WebUI", package: "web-ui"),

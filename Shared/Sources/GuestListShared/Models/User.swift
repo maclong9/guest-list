@@ -10,6 +10,8 @@ public struct User: Codable, Identifiable, Sendable, Hashable {
 
     public var email: String
 
+    public var passwordHash: String
+
     public var firstName: String
 
     public var lastName: String
@@ -26,6 +28,7 @@ public struct User: Codable, Identifiable, Sendable, Hashable {
         id: UUID = UUID(),
         venueID: UUID,
         email: String,
+        passwordHash: String,
         firstName: String,
         lastName: String,
         role: UserRole = .staff,
@@ -36,6 +39,7 @@ public struct User: Codable, Identifiable, Sendable, Hashable {
         self.id = id
         self.venueID = venueID
         self.email = email
+        self.passwordHash = passwordHash
         self.firstName = firstName
         self.lastName = lastName
         self.role = role

@@ -138,7 +138,9 @@ import FluentPostgresDriver
 import Foundation
 import Hummingbird
 import HummingbirdFluent
+import HummingbirdRedis
 import Logging
+import RediStack
 
 @main
 struct GuestListApp {
@@ -170,6 +172,49 @@ struct GuestListApp {
 
         logger.info("Database migrations completed successfully")
 
+        // Get Redis URL from environment
+        guard let redisURL = ProcessInfo.processInfo.environment["REDIS_URL"] else {
+            logger.error("REDIS_URL environment variable not set")
+            throw ApplicationError.missingRedisURL
+        }
+
+        // Configure Redis
+        logger.info("Connecting to Redis", metadata: ["url": "\(redisURL.prefix(20))..."])
+
+        // Parse Redis URL to get host and port
+        guard let url = URL(string: redisURL) else {
+            logger.error("Invalid REDIS_URL format")
+            throw ApplicationError.missingRedisURL
+        }
+
+        let redisHost = url.host ?? "localhost"
+        let redisPort = url.port ?? 6379
+        let redisPassword = url.password
+
+        // Create Redis connection pool using HummingbirdRedis
+        let redis = try RedisConnectionPoolService(
+            .init(hostname: redisHost, port: redisPort, password: redisPassword),
+            logger: logger
+        )
+
+        logger.info("Redis connection pool created successfully")
+
+        // Get JWT configuration from environment
+        guard let jwtSecret = ProcessInfo.processInfo.environment["JWT_SECRET"] else {
+            logger.error("JWT_SECRET environment variable not set")
+            throw ApplicationError.missingJWTSecret
+        }
+
+        let jwtExpirationHours = Int(ProcessInfo.processInfo.environment["JWT_EXPIRATION_HOURS"] ?? "24") ?? 24
+        let refreshTokenExpirationDays = Int(ProcessInfo.processInfo.environment["REFRESH_TOKEN_EXPIRATION_DAYS"] ?? "30") ?? 30
+
+        // Initialize services
+        let authService = AuthService(jwtSecret: jwtSecret, jwtExpirationHours: jwtExpirationHours, refreshTokenExpirationDays: refreshTokenExpirationDays)
+        let redisService = RedisService(redis: redis, logger: logger)
+
+        // Initialize controllers
+        let authController = AuthController(authService: authService, redisService: redisService, fluent: fluent, logger: logger)
+
         let router = Router()
 
         // Health check
@@ -191,7 +236,11 @@ struct GuestListApp {
             )
         }
 
-        // TODO: Add API endpoints
+        // Auth routes
+        let authGroup = router.group("api/v1/auth")
+        authController.addRoutes(to: authGroup)
+
+        // TODO: Add more API endpoints
         // EventController
         // GET    /api/v1/events
         // POST   /api/v1/events
@@ -208,12 +257,6 @@ struct GuestListApp {
         // GET    /api/v1/tickets/:id
         // POST   /api/v1/tickets/validate
         // POST   /api/v1/tickets/generate
-        //
-        // AuthController
-        // POST   /api/v1/auth/register
-        // POST   /api/v1/auth/login
-        // POST   /api/v1/auth/refresh
-        // POST   /api/v1/auth/logout
 
         // Frontend routes (WebUI-generated HTML)
         // Catch-all for frontend routes - should be last
@@ -287,14 +330,24 @@ struct GuestListApp {
             )
         }
 
+        // Get host and port from environment
+        let host = ProcessInfo.processInfo.environment["HOST"] ?? "127.0.0.1"
+        let port = Int(ProcessInfo.processInfo.environment["PORT"] ?? "8080") ?? 8080
+
         // Build and run the application
-        var app = Application(router: router)
+        var app = Application(
+            router: router,
+            configuration: .init(address: .hostname(host, port: port))
+        )
         app.logger = logger
 
-        logger.info("Starting GuestList web server on http://localhost:8080")
-        logger.info("  - Frontend: http://localhost:8080/")
-        logger.info("  - API: http://localhost:8080/api/v1/")
-        logger.info("  - Health: http://localhost:8080/health")
+        // Add Fluent to the application's service lifecycle
+        app.addServices(fluent)
+
+        logger.info("Starting GuestList web server on http://\(host):\(port)")
+        logger.info("  - Frontend: http://\(host):\(port)/")
+        logger.info("  - API: http://\(host):\(port)/api/v1/")
+        logger.info("  - Health: http://\(host):\(port)/health")
 
         try await app.runService()
     }
@@ -302,6 +355,8 @@ struct GuestListApp {
 
 enum ApplicationError: Error {
     case missingDatabaseURL
+    case missingRedisURL
+    case missingJWTSecret
     case databaseConnectionFailed
 }
 >>>>>>> b75037e (Project initialized 🚀)
